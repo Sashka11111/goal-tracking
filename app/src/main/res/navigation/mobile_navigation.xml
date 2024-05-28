@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_myGoals">
+
+    <fragment
+        android:id="@+id/navigation_myGoals"
+        android:name="com.liamtseva.goal_tracking.ui.myGoals.MyGoals"
+        android:label="Мої цілі"
+        tools:layout="@layout/my_goals" />
+
+    <fragment
+        android:id="@+id/navigation_addGoals"
+        android:name="com.liamtseva.goal_tracking.ui.addGoals.AddGoals"
+        android:label="Додати ціль"
+        tools:layout="@layout/add_goals" />
+
+    <fragment
+        android:id="@+id/navigation_advice"
+        android:name="com.liamtseva.goal_tracking.ui.advice.Advice"
+        android:label="Поради"
+        tools:layout="@layout/advice" />
+</navigation>
