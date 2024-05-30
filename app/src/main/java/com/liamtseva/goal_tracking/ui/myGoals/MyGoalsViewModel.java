@@ -1,19 +1,25 @@
-package com.liamtseva.goal_tracking.ui.myGoals;
-
+package com.liamtseva.goal_tracking.ui.myGoals;// MyGoalsViewModel.java
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MyGoalsViewModel extends ViewModel {
+import com.liamtseva.goal_tracking.Model.GoalModel;
 
-    private final MutableLiveData<String> mText;
+import java.util.List;
+
+public class MyGoalsViewModel extends ViewModel {
+    private MutableLiveData<List<GoalModel>> goalsList;
 
     public MyGoalsViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        goalsList = new MutableLiveData<>();
+        // Ініціалізуйте goalsList або завантажте дані за замовчуванням
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<GoalModel>> getGoalsList() {
+        return goalsList;
+    }
+
+    public void updateGoalsList(List<GoalModel> goals) {
+        goalsList.setValue(goals);
     }
 }

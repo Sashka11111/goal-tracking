@@ -9,10 +9,10 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.liamtseva.goal_tracking.AddNewGoal;
-import com.liamtseva.goal_tracking.MainActivity;
 import com.liamtseva.goal_tracking.Model.GoalModel;
 import com.liamtseva.goal_tracking.R;
 import com.liamtseva.goal_tracking.Utils.DatabaseHandler;
@@ -23,11 +23,11 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.ViewHolder> {
 
     private List<GoalModel> goalList;
     private DatabaseHandler db;
-    private MainActivity activity;
+    private Context context;
 
-    public GoalAdapter(DatabaseHandler db, MainActivity activity) {
+    public GoalAdapter(DatabaseHandler db, Context context) {
         this.db = db;
-        this.activity = activity;
+        this.context = context;
     }
 
     @NonNull
@@ -67,7 +67,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.ViewHolder> {
     }
 
     public Context getContext() {
-        return activity;
+        return context;
     }
 
     public void setGoals(List<GoalModel> goalList) {
@@ -89,7 +89,7 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.ViewHolder> {
         bundle.putString("goal", item.getGoal());
         AddNewGoal fragment = new AddNewGoal();
         fragment.setArguments(bundle);
-        fragment.show(activity.getSupportFragmentManager(), AddNewGoal.TAG);
+        fragment.show(((FragmentActivity) context).getSupportFragmentManager(), AddNewGoal.TAG);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

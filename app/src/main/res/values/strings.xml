@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">goal-tracking</string>
+    <string name="app_name">Goal tracking</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="save">Save</string>
-    <string name="new_task">New Goal</string>
-    <string name="tasks">Goals</string>
+    <string name="new_goal">New Goal</string>
+    <string name="goals">Goals</string>
+    <string name="cancel_button_text">Скасувати</string>
+    <string name="adviceTextView">Your advice here</string>
 </resources>

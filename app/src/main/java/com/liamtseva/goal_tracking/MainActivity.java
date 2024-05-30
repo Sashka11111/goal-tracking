@@ -3,6 +3,7 @@ package com.liamtseva.goal_tracking;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -46,9 +47,9 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_myGoals, R.id.navigation_addGoals, R.id.navigation_advice)
+                R.id.navigation_myGoals, R.id.navigation_advice)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment );
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(goalsAdapter));
         itemTouchHelper.attachToRecyclerView(goalsRecyclerView);
 
-        fab = findViewById(R.id.fab);
+        Button fab = findViewById(R.id.fab);
 
         goalList = db.getAllGoals();
         Collections.reverse(goalList);
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
                 AddNewGoal.newInstance().show(getSupportFragmentManager(), AddNewGoal.TAG);
             }
         });
+
     }
 
     @Override

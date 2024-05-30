@@ -35,21 +35,22 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
         final int position = viewHolder.getAdapterPosition();
         if (direction == ItemTouchHelper.LEFT) {
             AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
-            builder.setTitle("Delete Goal");
-            builder.setMessage("Are you sure you want to delete this Goal?");
-            builder.setPositiveButton("Confirm",
+            builder.setTitle("Видалити ціль");
+            builder.setMessage("Ви впевнені, що хочете видалити ціль?");
+            builder.setPositiveButton("Видалити",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             adapter.deleteItem(position);
                         }
                     });
-            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.cancel_button_text, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     adapter.notifyItemChanged(viewHolder.getAdapterPosition());
                 }
             });
+
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {

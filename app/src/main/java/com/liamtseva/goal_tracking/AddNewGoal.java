@@ -113,9 +113,10 @@ public class AddNewGoal extends BottomSheetDialogFragment {
     }
 
     @Override
-    public void onDismiss(@NonNull DialogInterface dialog){
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
         Activity activity = getActivity();
-        if(activity instanceof DialogCloseListener)
-            ((DialogCloseListener)activity).handleDialogClose(dialog);
+        if (activity instanceof DialogCloseListener)
+            ((DialogCloseListener) activity).handleDialogClose(dialog);
     }
 }

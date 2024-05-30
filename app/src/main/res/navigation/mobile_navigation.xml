@@ -10,13 +10,6 @@
         android:name="com.liamtseva.goal_tracking.ui.myGoals.MyGoals"
         android:label="Мої цілі"
         tools:layout="@layout/my_goals" />
-
-    <fragment
-        android:id="@+id/navigation_addGoals"
-        android:name="com.liamtseva.goal_tracking.ui.addGoals.AddGoals"
-        android:label="Додати ціль"
-        tools:layout="@layout/add_goals" />
-
     <fragment
         android:id="@+id/navigation_advice"
         android:name="com.liamtseva.goal_tracking.ui.advice.Advice"
