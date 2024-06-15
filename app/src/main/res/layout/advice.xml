@@ -27,7 +27,7 @@
             android:layout_height="393dp"
             android:layout_weight="1"
             android:lineSpacingExtra="4dp"
-            android:text="Here is some sample advice text to showcase the new design. It should be visually appealing and easy to read."
+            android:text="Here is some sample advice text to showcase the new design."
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
     </LinearLayout>

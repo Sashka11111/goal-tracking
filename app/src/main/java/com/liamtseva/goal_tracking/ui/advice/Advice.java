@@ -1,4 +1,3 @@
-// Advice.java
 package com.liamtseva.goal_tracking.ui.advice;
 
 import android.os.Bundle;

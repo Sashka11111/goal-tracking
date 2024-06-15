@@ -12,7 +12,6 @@ public class MyGoalsViewModel extends ViewModel {
 
     public MyGoalsViewModel() {
         goalsList = new MutableLiveData<>();
-        // Ініціалізуйте goalsList або завантажте дані за замовчуванням
     }
 
     public LiveData<List<GoalModel>> getGoalsList() {
