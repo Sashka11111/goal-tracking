@@ -46,37 +46,42 @@ public class MyGoals extends Fragment implements DialogCloseListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Initialize the database and open it
         db = new DatabaseHandler(getActivity());
         db.openDatabase();
 
+        // Setup RecyclerView and Adapter
         goalsRecyclerView = binding.goalsRecyclerView;
         goalsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         goalsAdapter = new GoalAdapter(db, getActivity());
         goalsRecyclerView.setAdapter(goalsAdapter);
 
+        // Attach ItemTouchHelper to RecyclerView
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(goalsAdapter));
         itemTouchHelper.attachToRecyclerView(goalsRecyclerView);
 
+        // Setup FloatingActionButton
         fab = binding.fab;
-
-        goalList = db.getAllGoals();
-        Collections.reverse(goalList);
-
-        goalsAdapter.setGoals(goalList);
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AddNewGoal.newInstance().show(getParentFragmentManager(), AddNewGoal.TAG);
             }
         });
+
+        // Load goals from the database and set them to the adapter
+        loadGoals();
     }
 
-    @Override
-    public void handleDialogClose(DialogInterface dialog) {
+    private void loadGoals() {
         goalList = db.getAllGoals();
         Collections.reverse(goalList);
         goalsAdapter.setGoals(goalList);
         goalsAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void handleDialogClose(DialogInterface dialog) {
+        loadGoals();
     }
 }

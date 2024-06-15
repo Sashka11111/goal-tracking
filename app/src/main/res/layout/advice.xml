@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="540dp"
+        android:layout_height="454dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
         android:elevation="4dp"
@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/text_advice"
             android:layout_width="0dp"
-            android:layout_height="503dp"
+            android:layout_height="393dp"
             android:layout_weight="1"
             android:lineSpacingExtra="4dp"
             android:text="Here is some sample advice text to showcase the new design. It should be visually appealing and easy to read."

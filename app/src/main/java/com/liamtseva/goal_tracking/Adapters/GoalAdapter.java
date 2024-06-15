@@ -18,7 +18,9 @@ import com.liamtseva.goal_tracking.R;
 import com.liamtseva.goal_tracking.Utils.DatabaseHandler;
 
 import java.util.List;
-
+/*відповідає за відображення списку цілей  у вигляді списку,
+де кожен елемент списку представлений у вигляді CheckBox
+*/
 public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.ViewHolder> {
 
     private List<GoalModel> goalList;
